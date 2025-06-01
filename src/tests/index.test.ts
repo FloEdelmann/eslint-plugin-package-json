@@ -12,6 +12,7 @@ describe("configs", () => {
 			fix: true,
 		});
 		const code = await readFile(
+			// @ts-expect-error - The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.ts(1470)
 			resolve(import.meta.filename, "../../../package.json"),
 			"utf8",
 		);

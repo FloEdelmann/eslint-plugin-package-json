@@ -17,6 +17,7 @@ import { rule as validPackageDefinition } from "./rules/valid-package-definition
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
+// @ts-expect-error - The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.ts(1470)
 const require = createRequire(import.meta.url || __filename);
 
 const { name, version } = require("../package.json") as {
